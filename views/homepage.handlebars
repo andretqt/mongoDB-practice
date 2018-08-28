@@ -10,6 +10,9 @@
     </ul>
   </div>
 </nav>
+<div class="results" style="background-color:gray;">
+
+</div>
 
 <script type="text/javascript">
   $(document).ready(function () {
@@ -17,6 +20,10 @@
     $("#scraperButton").on("click", function (e) {
       e.preventDefault();
       console.log("pressed scraper button");
+      $.ajax({
+        method: "GET",
+        url: "/scrape"
+      }).then(console.log("just send the get request"));
     });
   });
 </script>
